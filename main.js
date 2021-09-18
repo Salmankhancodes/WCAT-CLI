@@ -29,5 +29,25 @@ contentArr = contentArr.split('\r\n')
 
 // temp = ''
 
+//-s command
+if (commands.includes('-s')) {
+  for (let i = 1; i < contentArr.length; i++) {
+    if (
+      (contentArr[i] == '' && contentArr[i - 1] == '') ||
+      (contentArr[i] == '' && contentArr[i - 1] == null)
+    ) {
+      contentArr[i] = null
+    }
+  }
+  tempArr = []
+  for (let i = 0; i < contentArr.length; i++) {
+    if (contentArr[i] !== null) {
+      tempArr.push(contentArr[i])
+    }
+  }
+  contentArr = tempArr
+}
+
+
 
 console.log(contentArr.join('\n'))
