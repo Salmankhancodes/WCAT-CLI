@@ -17,6 +17,10 @@ for (let i = 0; i < inputArr.length; i++) {
 
 let contentArr = ''
 
+//edge case
+if (commands.includes('-b') && commands.includes('-n'))
+  return console.error('-b and -n cannot be used together')
+
 for (let i = 0; i < files.length; i++) {
   const filepath = path.join(__dirname, files[i])
   if (!fs.existsSync(filepath))
@@ -55,7 +59,6 @@ if (commands.includes('-n')) {
     contentArr[i] = `${i + 1} ` + contentArr[i]
   }
 }
-
 
 //-b
 
