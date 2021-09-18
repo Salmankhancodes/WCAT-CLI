@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 let fs = require('fs')
 const path = require('path')
 let inputArr = process.argv.slice(2)
