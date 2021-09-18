@@ -48,6 +48,12 @@ if (commands.includes('-s')) {
   contentArr = tempArr
 }
 
+//-n
 
+if (commands.includes('-n')) {
+  for (let i = 0; i < contentArr.length; i++) {
+    contentArr[i] = `${i + 1} ` + contentArr[i]
+  }
+}
 
 console.log(contentArr.join('\n'))
